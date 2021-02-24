@@ -1,0 +1,73 @@
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+
+@mixin l-flex-wrap($num: 4, $mr: 40px, $mt: 40px, $tab_num: 4, $sp_num: 1) {
+  & > * {
+    box-sizing: border-box;
+  }
+
+  @include mq(pc) {
+    $margin-num: $num - 1;
+    $row-num: $num + 1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$num} - 1px);
+      &:not(:nth-child(#{$num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(tab-only) {
+    $margin-num: $tab_num - 1;
+    $row-num: $tab_num + 1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      width: calc((100% - #{$mr} * #{$margin-num}) / #{$tab_num} - 1px);
+      &:not(:nth-child(#{$tab_num}n)) {
+        margin-right: $mr;
+      }
+      &:nth-child(n + #{$row-num}) {
+        margin-top: $mt;
+      }
+    }
+  }
+
+  @include mq(sp) {
+    @if $sp_num == 1 {
+      & > * + * {
+        margin-top: $mt;
+      }
+    } @else {
+      $margin-num: $sp_num - 1;
+      $row-num: $sp_num + 1;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * {
+        width: calc((100% - #{$mr} * #{$margin-num}) / #{$sp_num} - 1px);
+        &:not(:nth-child(#{$sp_num}n)) {
+          margin-right: $mr;
+        }
+        &:nth-child(n + #{$row-num}) {
+          margin-top: $mt;
+        }
+      }
+    }
+  }
+}

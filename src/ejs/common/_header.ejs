@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%=title %></title>
+  <link rel="icon" href="./favicon.ico">
+
+  <!-- font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+	<!-- original css -->
+	<link rel="stylesheet" href="<%= path %>/css/style.css">
+
+  <meta name="description" content="<%= description %>">
+  <meta name="keywords" content="<%= keywords %>">
+</head>
+
+<body class="body <%= page_name %>">
+
+
+  <header class="header">
+    <div class="inner header-inner">
+      <div class="header-content">
+
+
+        <<%= logo_tag %> class="header-logo"><a href="/"><img src="./img/header-logo.png" alt="ロゴ"></a></<%= logo_tag %>>
+
+
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#">MENU1</a></li>
+            <li><a href="#">MENU2</a></li>
+            <li><a href="#">MENU3</a></li>
+            <li><a href="#">MENU4</a></li>
+            <li><a href="#">MENU5</a></li>
+          </ul>
+        </nav><!-- /header-nav -->
+
+
+        <div class="header-drawer">
+          <div class="drawer">
+            <button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false">
+              <span class="drawer-bars">
+                <span class="drawer-bar"></span>
+                <span class="drawer-bar"></span>
+                <span class="drawer-bar"></span>
+              </span>
+            </button>
+            <div class="drawer-bg for-drawer"></div>
+            <div id="drawer-content1" class="drawer-content for-drawer" aria-hidden="true">
+              コンテンツ部分
+            </div><!-- /drawer-content -->
+          </div><!-- /drawer -->
+        </div><!-- /header-drawer -->
+
+
+      </div><!-- /.header-content -->
+    </div><!-- /inner -->
+  </header><!-- /header -->

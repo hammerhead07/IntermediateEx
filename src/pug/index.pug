@@ -1,0 +1,36 @@
+extend /pug/includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website"; // トップページは"website", それ以外は"article"
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var logo_tag = 'h1';
+  - var pageName = "home";
+
+append headscript
+  script(src="./js/viewport.js")
+
+append js
+  //- script(src="./js/.js")
+
+block content  
+  .mv
+    .inner
+      .devided-gulp
+        :php
+          echo "helloworld"
+    // /.inner
+  |
+  |
+
+  main.content.main
+  // /.content
+  |
+  |

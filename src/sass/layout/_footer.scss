@@ -1,0 +1,16 @@
+.footer {
+  margin-top: auto;
+  background-color: $cr-bg-footer;
+  padding: 30px 0;
+
+	> .inner {
+	}
+}
+
+.footer-copy {
+  font-size: 14px;
+
+  @include mq(sp) {
+    font-size: 12px;
+  }
+}

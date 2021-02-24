@@ -1,0 +1,15 @@
+block variables
+doctype html
+html(lang=pageLang)
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + pageOgpType + ": http://ogp.me/ns/" + pageOgpType + "#")
+    include /pug/includes/_meta
+
+  body(class=`body ${pageName}`)
+    include /pug/includes/_header
+
+    block content
+
+    block headscript
+
+    include /pug/includes/_footer
+    include /pug/includes/_script
