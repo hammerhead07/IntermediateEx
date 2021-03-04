@@ -1,0 +1,88 @@
+extend /pug/includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "お料理";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "article"; // トップページは"website", それ以外は"article"
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var logo_tag = 'div';
+  - var pageName = "lower menu";
+
+append css
+
+append headscript
+  script(src="./js/viewport.js")
+
+append js
+  //- script(src="./js/.js")
+
+block content  
+  .lower-fv(style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./img/menu-top.jpg) no-repeat center center / cover;height: 600px;")
+    h1.lower-fv-title !{pageTitle}
+    // /.l-container
+  |
+  |
+
+  .breadcrumb
+    .l-container
+      ul.breadcrumb__list
+        li.breadcrumb__item: a(href="/") トップ
+        li.breadcrumb__item !{pageTitle}
+
+  main.l-main
+    section.about-main.section
+      .l-container
+        p.about-main__lead 地元熱海の市場で仕入れた食材のみを使った食材をふんだんに使い、<br>
+          | 大将の技が光る「熱海料理」<br>
+          | 四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。<br>
+        .about-main__content.p-alternate
+          -
+            const contents = [
+              {
+                img: 'menu01.jpg',
+                alt: '会席料理の画像',
+                title: '地元食材にこだわった会席料理',
+                text: 'みずみずしくほのかに甘い野菜、新鮮で味に深みがある魚介類、肉類。<br>旬の素材をそのままに生かす、経験に裏打ちされた確かな技。<br>四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。',
+                notes: [
+
+                ]
+              },
+              {
+                img: 'menu02.jpg',
+                alt: '熱海のとれたて新鮮な魚の画像',
+                title: '熱海の漁港で目利きの品を',
+                text: '石井花壇でお出しする料理はすべて料理長である大将の目利きで、<br>熱海の魚市場でその日のうちに仕入れたものを使用しております。<br>日本海の宝玉を十分にお楽しみください。',
+                notes: [
+
+                ]
+              },
+              {
+                img: 'menu03.jpg',
+                alt: '一流の職人が一流の食材をさばく様子',
+                title: '食材が一流、職人も一流',
+                text: '石井花壇の料理人は料亭で20年経験を積んだものばかり。<br>その時の最も旬な食材を、最高の調理でお届けします。<br>また、お料理への細かいご要望にもお答えできますので、<br>お気軽にお申し付けください。',
+                notes: [
+
+                ]
+              },
+            ];
+          each content in contents
+            .about-main__item.p-about-item.p-alternate__item
+              figure.p-about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
+              .p-about-item__body.p-alternate__item-secondary
+                h2.p-about-item__title=content.title
+                .p-about-item__text !{content.text}
+                if(content.notes.length)
+                  ul.p-about-item__note
+                    each note in content.notes
+                      li.p-about-item__note-item= note
+  |
+  |
+
+  append footer

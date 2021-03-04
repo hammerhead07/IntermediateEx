@@ -1,15 +1,14 @@
 // レイアウト幅
 $layout-width-canvas: 1440px;
-$layout-width-inner: 1060px;
-$layout-width-vw: 1060;
+$layout-width-container: 1180px;
 $layout-sp-vw: 767px;
 
 // ブレークポイント
 $breakpoints: (
 	"sp": "(max-width: #{$layout-sp-vw})",
-	"tab-only": "(min-width: #{$layout-sp-vw + 1px}) and (max-width: #{$layout-width-inner - 1px})",
-	"tab": "(max-width: #{$layout-width-inner - 1px})",
-	"pc": "(min-width: #{$layout-width-inner})",
+	"tab-only": "(min-width: #{$layout-sp-vw + 1px}) and (max-width: #{$layout-width-container - 1px})",
+	"tab": "(max-width: #{$layout-width-container - 1px})",
+	"pc": "(min-width: #{$layout-width-container})",
 	"ie": "(-ms-high-contrast: active), (-ms-high-contrast: none)"
 );
 

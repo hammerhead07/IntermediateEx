@@ -1,0 +1,36 @@
+.p-alternate {
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(sp) {
+      display: block;
+    }
+
+    &-primary {
+      flex: 0 0 50%;
+    }
+
+    &-secondary {
+      flex: 0 1 auto;
+
+      @include mq(sp) {
+      }
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      & .p-alternate__item-primary {
+
+        @include mq(sp) {
+          // margin-left: 0;
+        }
+      }
+
+      & .p-alternate__item-secondary {
+      }
+    }
+  }
+}

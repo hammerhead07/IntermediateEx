@@ -1,4 +1,4 @@
-$ff-basic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$ff-basic: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E","ＭＳ Ｐ明朝", "MS PMincho", serif;
 
 $ff-kgpw3: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
 $ff-kgpw6: "HiraKakuPro-W6", "ヒラギノ角ゴ Pro W6", sans-serif;
@@ -13,6 +13,22 @@ $ff-code: monospace, sans-serif;
 
 $fz-base: 1.6rem;
 $ff-base: $ff-basic;
-$fw-base: 500;
 $lh-base: 1;
 $ls-base: 0em;
+
+
+/************************************************************************
+* font-weight
+************************************************************************/
+$fw-ultraLight: 100;
+$fw-extraLight: 200;
+$fw-light: 300;
+$fw-semiLight: 400;
+$fw-medium: 500;
+$fw-semiBold: 600;
+$fw-bold: 700;
+$fw-extraBold: 800;
+$fw-ultraBold: 900;
+
+$fw-base: $fw-medium;
+

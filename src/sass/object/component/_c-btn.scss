@@ -1,0 +1,48 @@
+// 色
+$btn-background-color: $white;
+$btn-border-color: #707070;
+$btn-font-color: $text-color;
+
+// サイズ
+$btn-width: 200px;
+$btn-height: 60px;
+$btn-border-width: 1px;
+$btn-border-radius: 0;
+$btn-font-size: 16px;
+$btn-font-wight: $fw-medium;
+$btn-letter-spacing: 0;
+
+.c-btn {
+  appearance: none;
+  padding: 19px 2em;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: $btn-width;
+  max-width: 100%;
+  border: 1px solid $btn-border-color;
+  color: $btn-font-color;
+  letter-spacing: $btn-letter-spacing;
+  font-weight: $btn-font-wight;
+  margin: 0;
+  background-image: none;
+  background-color: $btn-background-color;
+  text-decoration: none;
+  border-radius: $btn-border-radius;
+  font-size: $btn-font-size;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-foucus-inner {
+    padding: 0;
+    border: none;
+  }
+}

@@ -1,19 +1,27 @@
+// 使用する色
+$black: #000;
+$white: #fff;
+$red: #f00;
+$gray: #b2b2b2;
+
+// 用途による色
+$color-important: $red;
+$color-disable: #b2b2b2;
+
 // ベース色
-$cr-m: #EEEEEE;
+$main-color: #EEEEEE;
 
 // 背景
-$cr-bg: #fff;
-$cr-bg-header: $cr-m;
-$cr-bg-footer: $cr-m;
+$bg-color: $white;
+$header-bg-color: $white;
+$footer-bg-color: $black;
 
 // テキスト色
-$cr-txt: #333;
+$text-color: $black;
 
 // 透過度
-$opacity: 0.6;
+$opacity: 0.7;
 
 // テーブル
-$cr-table: #eee;
+$table-color: #eee;
 
-// ボタン
-$color-disable: #b2b2b2;

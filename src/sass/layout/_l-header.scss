@@ -1,0 +1,18 @@
+.l-header {
+  position: fixed;
+  width: 100%;
+  background: $header-bg-color;
+  top: 0;
+  left: 0;
+  height: $header-height;
+  z-index: map-get($layer, "header");
+  padding: 0 30px;
+
+  @include mq(tab) {
+    height: $header-height-sp;
+  }
+
+  .home & {
+    display: none;
+  }
+}

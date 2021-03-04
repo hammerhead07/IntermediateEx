@@ -1,13 +1,13 @@
-.footer {
+.l-footer {
   margin-top: auto;
-  background-color: $cr-bg-footer;
+  background-color: $footer-bg-color;
   padding: 30px 0;
 
-	> .inner {
-	}
+  > .l-container {
+  }
 }
 
-.footer-copy {
+.l-footer-copy {
   font-size: 14px;
 
   @include mq(sp) {

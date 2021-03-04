@@ -1,5 +1,5 @@
 // PC
-.hidden-pc {
+.u-hidden-pc {
 
 	@include mq("pc") {
 		display: none;
@@ -7,7 +7,7 @@
 }
 
 // タブレット
-.hidden-tab {
+.u-hidden-tab {
 
 	@include mq("tab-only") {
 		display: none;
@@ -15,7 +15,7 @@
 }
 
 // スマホ
-.hidden-sp {
+.u-hidden-sp {
 
 	@include mq("sp") {
 		display: none;

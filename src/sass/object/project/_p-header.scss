@@ -1,0 +1,91 @@
+.p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: $black;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 32px;
+    letter-spacing: 0.18em;
+    line-height: 40px;
+    margin-right: 120px;
+    font-family: "凸版文久見出し明朝";
+    font-weight: $fw-extraBold;
+
+    a {
+      transition: all 0.3s ease 0s;
+
+      &:hover,
+      &:focus {
+        opacity: $opacity;
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  &__nav {
+    @include mq("sp") {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      font-weight: $fw-extraBold;
+
+      & + li {
+        margin-left: 30px;
+      }
+
+      > a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+          opacity: $opacity;
+        }
+      }
+    }
+  }
+
+  &__cv-btn {
+    width: 170px;
+    color: $white;
+    width: 170px;
+    height: 54px;
+    background-color: #978F10;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $fw-extraBold;
+
+    &::before {
+      content: '';
+      background: transparent url('../img/calender.png') no-repeat center center / cover;
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+  }
+}
+

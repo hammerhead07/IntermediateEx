@@ -145,8 +145,8 @@ function pugFiles() {
     .pipe(mode.development(htmlbeautify()))
     .pipe(sitemode.php(rename({ extname: '.php' })))
     .pipe(sitemode.html(dest(PATHS.pug.dest)))
-    .pipe(sitemode.php(dest(PATHS.pug.destwp)));
-    // .pipe(sitemode.html(browserSync.reload({ stream: true })));
+    .pipe(sitemode.php(dest(PATHS.pug.destwp)))
+    .pipe(sitemode.html(browserSync.reload({ stream: true })));
 }
 
 // ejs
@@ -211,8 +211,8 @@ function sassFunc() {
     .pipe(sitemode.html(mode.development(dest(PATHS.styles.dest, { sourcemaps: "./map" }))))
     .pipe(sitemode.html(mode.production(dest(PATHS.styles.dest))))
     .pipe(sitemode.php(mode.development(dest(PATHS.styles.destwp, { sourcemaps: "./map" }))))
-    .pipe(sitemode.php(mode.production(dest(PATHS.styles.destwp))));
-    // .pipe(sitemode.html(browserSync.reload({ stream: true })));
+    .pipe(sitemode.php(mode.production(dest(PATHS.styles.destwp))))
+    .pipe(sitemode.html(browserSync.reload({ stream: true })));
 };
 
 
@@ -335,11 +335,11 @@ function watchSassFiles(done) {
 exports.default = series(
   parallel(sassFunc, pugFiles, js, imageminFunc),
   series(browsersync, watchFiles)
-  );
+);
 
-  exports.watchwp = series(
-    parallel(sassFunc, pugFiles, js, imageminFunc),
-    watchWpFiles
+exports.watchwp = series(
+  parallel(sassFunc, pugFiles, js, imageminFunc),
+  watchWpFiles
 )
 
 exports.watchsass = series(sassFunc, watchSassFiles);

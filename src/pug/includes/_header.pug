@@ -1,29 +1,33 @@
 block variables
 
-header.header
-  .inner.header-inner
-    .header-content
-      #{logo_tag}.header-logo: a(href="/"): img(src="./img/header-logo  .png", alt="ロゴ")
+header.l-header
+  .p-header
+    .p-header__left
+      #{logo_tag}.p-header__logo: a(href="/")
+        img(src="./img/logo02.png", alt="ロゴ")
+        | 石井花壇
 
-      nav.header-nav
+      nav.p-header__nav
         ul
-          - for(let i = 1; i <= 5; i++)
-            li: a(href="#") MENU#{i}
-      // /.header-nav
+          each item in ['お部屋', 'お料理', '温泉']
+            li: a(href="#") #{item}
+      // /.l-header-nav
 
-      .header-drawer
-        .drawer
-          button.drawer-icon.js-drawer.for-drawer(type="button" "data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
-            |
-            span.drawer-bars
-              - for(let i = 0; i < 3; i++)
-                span.drawer-bar
-            |
-          .drawer-bg.for-drawer.js-drawer("data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
-          #drawer-content1.drawer-content.for-drawer("aria-hidden"="true") コンテンツ部分
-      // /.header-drawer
-    // /.header-content
-  // /.header-inner
-// /.header
+    .p-header__right
+      button.c-btn.p-header__cv-btn 宿泊予約
+
+    .p-header-drawer
+      .drawer
+        button.drawer-icon.js-drawer.for-drawer(type="button" "data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
+          |
+          span.drawer-bars
+            - for(let i = 0; i < 3; i++)
+              span.drawer-bar
+          |
+        .drawer-bg.for-drawer.js-drawer("data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
+        #drawer-content1.drawer-content.for-drawer("aria-hidden"="true") コンテンツ部分
+    // /.l-header-drawer
+  // /.p-header
+// /.l-header
 |
 |

@@ -1,0 +1,27 @@
+.p-section {
+
+  &__content {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    &_padding-bottom_large {
+      padding-bottom: 14.4rem;
+    }
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    text-align: center;
+
+    &::before {
+      content: '';
+      display: block;
+      margin-bottom: 2rem;
+      width: 4rem;
+      height: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+      background: transparent url('../img/logo02.png') no-repeat center center / contain;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+extend /pug/includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "温泉";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "article"; // トップページは"website", それ以外は"article"
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var logo_tag = 'div';
+  - var pageName = "lower onsen";
+
+append css
+
+append headscript
+  script(src="./js/viewport.js")
+
+append js
+  //- script(src="./js/.js")
+
+block content  
+  .lower-fv(style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./img/onsen-top.jpg) no-repeat center center / cover;height: 600px;")
+    h1.lower-fv-title !{pageTitle}
+    // /.l-container
+  |
+  |
+
+  .breadcrumb
+    .l-container
+      ul.breadcrumb__list
+        li.breadcrumb__item: a(href="/") トップ
+        li.breadcrumb__item !{pageTitle}
+
+  main.l-main
+    section.about-main.section
+      .l-container
+        p.about-main__lead 心も身体も癒やす汐の温泉。<br>
+          | 湯あたりしにくく、赤ちゃんから年配の方までどなたでもゆっくりと安心して入っていただけます。<br>
+          | 柔らかく優しい湯にじっくりと漬かれば、心身共にリラックスできます。<br>
+        .about-main__content.p-alternate
+          -
+            const contents = [
+              {
+                img: 'onsen01.jpg',
+                alt: '海が見える貸切露天風呂の画像',
+                title: '貸し切り露天風呂「雲居の湯」',
+                text: '弱酸性の湯質が優しく肌を包み込むような心地よさ<br>最上階の露天風呂「雲居の湯」では、湯冷めしにくい食塩泉を<br>熱海の町並みを遠方に望みながら・・・',
+                notes: [
+
+                ]
+              },
+              {
+                img: 'onsen02.jpg',
+                alt: '美肌効果の硫黄泉の画像',
+                title: '美肌を促す乳白色の硫黄泉を',
+                text: 'まじりっけなしの白いにごり湯。鳥海山から引いた酸性の強い硫酸塩泉を、<br>たっぷりと掛け流しています。<br>四季の移り変わりを、天然温泉の湯に浸りながら味わってください。',
+                notes: [
+
+                ]
+              },
+            ];
+          each content in contents
+            .about-main__item.p-about-item.p-alternate__item
+              figure.p-about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
+              .p-about-item__body.p-alternate__item-secondary
+                h2.p-about-item__title=content.title
+                .p-about-item__text !{content.text}
+                if(content.notes.length)
+                  ul.p-about-item__note
+                    each note in content.notes
+                      li.p-about-item__note-item= note
+
+    section.efficacy-section.section
+      .l-container.l-inner.efficacy
+        h2.efficacy-section__title.section__title
+        table.c-table
+          tbody
+            tr
+              th 効能
+              td 神経痛・慢性関節リューマチ・腰痛・冷え性・慢性婦人病・うちみなど
+            tr
+              th 泉質
+              td ナトリウム・カルシウム-塩化物泉
+            tr
+              th 飲用効果
+              td 弱塩化物泉は肌にやわらかなため、高齢者や病後の回復期によく、飲用すれば慢性便秘や慢性消化器病に効果があります。
+  |
+  |
+
+  append footer

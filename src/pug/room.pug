@@ -1,0 +1,91 @@
+extend /pug/includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "お部屋";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= "";
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "article"; // トップページは"website", それ以外は"article"
+  //- Not modified
+  - var pageUrl= relativePath;
+  - var logo_tag = 'div';
+  - var pageName = "lower room";
+
+append css
+
+append headscript
+  script(src="./js/viewport.js")
+
+append js
+  //- script(src="./js/.js")
+
+block content  
+  .lower-fv(style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./img/oheya-top.jpg) no-repeat center center / cover;height: 600px;")
+    h1.lower-fv-title !{pageTitle}
+    // /.l-container
+  |
+  |
+
+  .breadcrumb
+    .l-container
+      ul.breadcrumb__list
+        li.breadcrumb__item: a(href="/") トップ
+        li.breadcrumb__item !{pageTitle}
+
+  main.l-main
+    section.about-main.section
+      .l-container
+        p.about-main__lead 創業より受け継がれてきた石井花壇の和の造り<br>
+          | 温海の雄大な絶景を堪能していただけるように設計された客室<br>
+          | ゆるやかに流れ行く時間に身を委ねて<br>
+        .about-main__content.p-alternate
+          -
+            const contents = [
+              {
+                img: 'oheya01.jpg',
+                alt: '温泉付き客室の画像',
+                title: '温泉付き客室',
+                text: '温海の源泉かけ流し露天風呂付き客室になります。<br>あなただけの上質な安らぎのひとときを。',
+                notes: [
+                  '部屋数に限りがございます。',
+                  '洗い場はないため、お体を先に大浴場でお流しになって頂く必要があります。'
+                ]
+              },
+              {
+                img: 'oheya02.jpg',
+                alt: '庭園付き客室の画像',
+                title: '庭園付き客室',
+                text: '庭園付きの客室になります。<br>お庭を見ながら、ほっとするひとときをお過ごしください。',
+                notes: [
+                  'お庭は複数のお客様と囲む形になります。', 
+                  '部屋数に限りがあります。',
+                  'ご希望の方は「お抹茶/500円」をルームサービスさせていただきます。'
+                ]
+              },
+              {
+                img: 'oheya03.jpg',
+                alt: '一般客室の画像',
+                title: '一般客室',
+                text: '最もベーシックな客室になります。伝統の中にモダンさを取り入れた<br>内装となっており、とても過ごしやすくしていただけます。',
+                notes: [
+                  '全室お部屋より日本海を望むことができます。'
+                ]
+              },
+            ];
+          each content in contents
+            .about-main__item.p-about-item.p-alternate__item
+              figure.p-about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
+              .p-about-item__body.p-alternate__item-secondary
+                h2.p-about-item__title= content.title
+                .p-about-item__text !{content.text}
+                if(content.notes.length)
+                  ul.p-about-item__note
+                    each note in content.notes
+                      li.p-about-item__note-item= note
+  |
+  |
+
+  append footer
