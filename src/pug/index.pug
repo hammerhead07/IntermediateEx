@@ -17,7 +17,6 @@ append variables
 append css
 
 append headscript
-  script(src="./js/viewport.js")
 
 append js
   //- script(src="./js/.js")
@@ -25,7 +24,7 @@ append js
 block content  
   .fv
     .fv-slider.js-fv-slider
-      .fv-slider__img.is-active: img(src="./img/mainbg01.jpg")
+      .fv-slider__img: img(src="./img/mainbg01.jpg")
       .fv-slider__img: img(src="./img/mainbg02.jpg")
       .fv-slider__img: img(src="./img/mainbg03.jpg")
     .l-container.fv__container
@@ -72,7 +71,7 @@ block content
               title: '喧騒から離れた空間<br>心落ち着く至極のひととき',
               text: 'まるで時が止まったかのような、圧倒的な静寂のなかで、<br>ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。',
               footer: 'お部屋について',
-              link: ''
+              link: 'room.html'
             },
             {
               img: 'menu-top.jpg',
@@ -80,7 +79,7 @@ block content
               title: '出迎えるのは<br>極上の温海料理',
               text: '最も旬の食材を愉しむ、最高の贅沢を<br>最高級A5ランクの米沢牛と共に頂く。<br>あなたの人生史に残る「極上の感動」を<br>お約束します。',
               footer: 'お料理について',
-              link: ''
+              link: 'menu.html'
             },
             {
               img: 'onsen-top.jpg',
@@ -88,7 +87,7 @@ block content
               title: '疲れ切った身体にやすらぎを<br>温海の源泉に癒やされて',
               text: '古くは弘法大師の病をも治療したと言われる熱海の泉質。<br>現代人の疲弊しきった身体を修復する最高級の湯治場として<br>ご活用ください。',
               footer: '温泉について',
-              link: ''
+              link: 'onsen.html'
             }
           ];
         each service in services
@@ -102,50 +101,49 @@ block content
                 a.c-btn.more-btn(href=service.link)= service.footer
 
     section.recommended-section.p-section
-      .l-container
-        .p-section__content.p-section__content_padding-bottom_large
-          h2.p-section__title おすすめご宿泊プラン
-          .recommended-section__list
-            - 
-              const recommends = [
-                {
-                  img: 'recommended01.jpg',
-                  alt: 'のどぐろがおいしい朝食のイメージ',
-                  lead: '朝食付きプラン、日本近海で取れたのどぐろを朝食として…',
-                  text: '最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味',
-                },
-                {
-                  img: 'recommended02.jpg',
-                  alt: '熱海蟹のお夕食のイメージ',
-                  lead: '【期間限定】熱海蟹をたっぷりと愉しむプラン。',
-                  text: '温海で水揚げされた蟹は「温海蟹」として知られ、嗜好品として愛されてきました。この宿泊プランでは存分に',
-                },
-                {
-                  img: 'recommended03.jpg',
-                  alt: '新鮮なお刺身の懐石料理のイメージ',
-                  lead: '【平日限定】贅沢美味懐石プラン。海辺の四季旬彩プラン。',
-                  text: '熱海近海で取れた魚を鮮度そのままに舟盛りにしてご提供。生きた味をお楽しみください。',
-                },
-              ];
-            each recommend in recommends
-              .c-card.recommended-section__item
-                a(href="").c-card__link
-                  figure.c-card__img: img(src=`./img/${recommend.img}`, alt=recommend.alt)
-                  .c-card__body
-                    .c-card__lead !{recommend.lead}
-                    .c-card__text !{recommend.text}
+      .l-container.p-section__content.p-section__content_padding-bottom_large
+        h2.p-section__title おすすめご宿泊プラン
+        .recommended-section__list
+          - 
+            const recommends = [
+              {
+                img: 'recommended01.jpg',
+                alt: 'のどぐろがおいしい朝食のイメージ',
+                lead: '朝食付きプラン、日本近海で取れたのどぐろを朝食として…',
+                text: '最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味',
+              },
+              {
+                img: 'recommended02.jpg',
+                alt: '熱海蟹のお夕食のイメージ',
+                lead: '【期間限定】熱海蟹をたっぷりと愉しむプラン。',
+                text: '温海で水揚げされた蟹は「温海蟹」として知られ、嗜好品として愛されてきました。この宿泊プランでは存分に',
+              },
+              {
+                img: 'recommended03.jpg',
+                alt: '新鮮なお刺身の懐石料理のイメージ',
+                lead: '【平日限定】贅沢美味懐石プラン。海辺の四季旬彩プラン。',
+                text: '熱海近海で取れた魚を鮮度そのままに舟盛りにしてご提供。生きた味をお楽しみください。',
+              },
+            ];
+          each recommend in recommends
+            .c-card.recommended-section__item
+              a(href="").c-card__link
+                figure.c-card__img: img(src=`./img/${recommend.img}`, alt=recommend.alt)
+                .c-card__body
+                  .c-card__lead !{recommend.lead}
+                  .c-card__text !{recommend.text}
 
     section.news-section.p-section
-      .l-container
-        .p-section__content
-          h2.p-section__title お知らせ
-          .news-section__main
-            .news-section__index.c-tab
-              ul.c-tab__index-list
-                li.c-tab__index-item: a(href='').c-tab__link 営業情報
-                li.c-tab__index-item: a(href='').c-tab__link その他
-            .news-section__body.c-tab__pages
-              .c-tab__page
+      .l-container.p-section__content
+        h2.p-section__title お知らせ
+        .news-section__main
+          .news-section__index.p-tab
+            ul.p-tab__index-list
+              li.p-tab__index-item.is-active: a(href='').p-tab__link 営業情報
+              li.p-tab__index-item: a(href='').p-tab__link その他
+          .p-tab__pages
+            .p-tab__page.is-active
+              .p-tab__page-content.news-section__body
                 -
                   const news_list = [
                     {
@@ -186,14 +184,15 @@ block content
                     },
                   ];
                 each news_item in news_list
-                  .c-media
-                    a(href="").c-media__link
-                    figure.c-media__img: img(src=`./img/${news_item.img}`, alt=news_item.alt)
-                    .c-media__body
-                      time(datetime=news_item.date).c-media__date= news_item.date
-                      .c-media__title= news_item.title
+                  a(href="").news-section__item-link
+                    .c-media
+                      figure.c-media__img: img(src=`./img/${news_item.img}`, alt=news_item.alt)
+                      .c-media__body
+                        time(datetime=news_item.date).c-media__date= news_item.date
+                        .c-media__title= news_item.title
 
-              .news-section__body.c-tab__page
+            .p-tab__page
+              .p-tab__page-content.news-section__body
                 -
                   const others = [
                     {
@@ -216,27 +215,26 @@ block content
                     },
                   ];
                 each other in others
-                  .c-media
-                    a(href="").c-media__link
-                    figure.c-media__img: img(src=`./img/${other.img}`, alt=other.alt)
-                    .c-media__body
-                      time(datetime=other.date).c-media__date= other.date
-                      .c-media__title= other.title
+                  a(href="").news-section__item-link
+                    .c-media
+                      figure.c-media__img: img(src=`./img/${other.img}`, alt=other.alt)
+                      .c-media__body
+                        time(datetime=other.date).c-media__date= other.date
+                        .c-media__title= other.title
 
     section.access-section.p-section
-      .l-container
-        .p-section__content
+      .l-container.p-section__content.p-section__content_padding-bottom_semi-large
           h2.p-section__title アクセス
           .access-section__main
-            .access-section__address.address-box.c-flex
-              figure.address-box__img: img(src="./img/access", alt="外観のイメージ")
-              .address-box__body
+            .access-section__address.address-box.c-flex.c-flex--extend-left
+              figure.address-box__img.c-flex__primary: img(src="./img/access.jpg", alt="外観のイメージ")
+              .address-box__body.c-flex__secondary
                 dl.address-box__main
                   address.address-box__item
                     dt 住所
                     dd 〒000-0000 
                     dd 山形県鶴岡市xxxxxxxxxx
-                  a(href="tel:00-0000-0000").address-box__item
+                  .address-box__item
                     dt TEL/FAX
                     dd 000-0000-0000/00-0000-0000
                   .address-box__item

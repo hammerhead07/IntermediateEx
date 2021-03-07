@@ -234,17 +234,17 @@ function js() {
   return src(PATHS.js.src, { sourcemaps: true })
     .pipe(order([PATHS.js.core, PATHS.js.app], { base: "./" }))
     .pipe(plumber({ errorHandler: errorHandler }))
-    .pipe(concat("script.js"))
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(uglify({ output: { comments: /^!/ } }))
-    .pipe(uglify({ output: { comments: 'some' } }))
-    // .pipe(
-    //   rename({
-    //     suffix: ".min"
-    //   })
-    // )
+    // .pipe(concat("script.js"))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
+    // .pipe(uglify({ output: { comments: /^!/ } }))
+    // .pipe(uglify({ output: { comments: 'some' } }))
+    // // .pipe(
+    // //   rename({
+    // //     suffix: ".min"
+    // //   })
+    // // )
     .pipe(dest(PATHS.js.dist, { sourcemaps: "./map" }))
     .pipe(browserSync.reload({ stream: true }));
 };

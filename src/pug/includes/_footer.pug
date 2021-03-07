@@ -12,15 +12,14 @@ footer.l-footer.p-footer
           a.p-footer__nav-link(href="./menu.html") お料理
         li.p-footer__nav-item
           a.p-footer__nav-link(href="./onsen.html") 温泉
-      .p-footer__title: a(href="/") 石井花壇
+      .p-footer__title.u-letter-spacing-l: a(href="/") 石井花壇
       .p-footer__address
-        dl
-          address
-            dt 住所
-            dd 〒000-0000 山形県鶴岡市xxxxxxxxxx
-          a(href="tel:00-0000-0000")
-            dt TEL/FAX
-            dd 000-0000-0000/00-0000-0000
+        address.p-footer__address-item
+          p 〒000-0000
+          p.u-letter-spacing-l 山形県鶴岡市xxxxxxxxxx
+        .p-footer__address-item
+          a(href="000-0000-0000") TEL.000-0000-0000
+          p FAX.00-0000-0000
   .p-footer__footer
     .l-container.p-footer__container
       block footer-container

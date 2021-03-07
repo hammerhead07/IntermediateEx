@@ -17,13 +17,12 @@ append variables
 append css
 
 append headscript
-  script(src="./js/viewport.js")
 
 append js
   //- script(src="./js/.js")
 
 block content  
-  .lower-fv(style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./img/onsen-top.jpg) no-repeat center center / cover;height: 600px;")
+  .lower-fv(style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./img/onsen-top.jpg) no-repeat center center / cover; height: 600px")
     h1.lower-fv-title !{pageTitle}
     // /.l-container
   |
@@ -64,20 +63,20 @@ block content
               },
             ];
           each content in contents
-            .about-main__item.p-about-item.p-alternate__item
-              figure.p-about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
-              .p-about-item__body.p-alternate__item-secondary
-                h2.p-about-item__title=content.title
-                .p-about-item__text !{content.text}
+            .about-main__item.about-item.p-alternate__item
+              figure.about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
+              .about-item__body.p-alternate__item-secondary
+                h2.about-item__title=content.title
+                .about-item__text !{content.text}
                 if(content.notes.length)
-                  ul.p-about-item__note
+                  ul.about-item__note
                     each note in content.notes
-                      li.p-about-item__note-item= note
+                      li.about-item__note-item= note
 
     section.efficacy-section.section
-      .l-container.l-inner.efficacy
-        h2.efficacy-section__title.section__title
-        table.c-table
+      .l-container.efficacy-section__content
+        h2.efficacy-section__title 温泉の効能
+        table.c-table.efficacy-section__table
           tbody
             tr
               th 効能

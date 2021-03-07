@@ -39,6 +39,8 @@ $btn-letter-spacing: 0;
   &:hover,
   &:focus {
     outline: none;
+    background-color: $btn-font-color;
+    color: $btn-background-color;
   }
 
   &::-moz-foucus-inner {

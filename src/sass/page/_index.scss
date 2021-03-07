@@ -3,35 +3,11 @@
 ************************************************************************/
 // fv -------------------------------------------------------------------
 .fv {
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
-  background: transparent url(../img/mainbg01.jpg) no-repeat center center / cover;
-  position: relative;
   color: $white;
-
-  &-slider,
-  &-slider__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &-slider__img {
-
-    &:not(.is-active) {
-      display: none;
-    }
-
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+  overflow: hidden;
+  position: relative;
 
   &__container {
     display: flex;
@@ -42,11 +18,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-
   }
 
   &__text-box {
-    position: absolute;
     margin-right: 140px;
   }
 
@@ -58,9 +32,55 @@
   }
 }
 
+// slider -------------------------------------------------------------------
+.fv-slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &__img {
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 2s linear, transform 7.5s linear;
+    position: relative;
+
+    &:not(.is-active) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.show_ {
+      opacity: 1;
+    }
+
+    &.zoom_ {
+      transform: scale(1.1);
+    }
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 // .concept-section -------------------------------------------------------------------
 .concept-section {
-  background: transparent url('../img/bg.jpg') no-repeat center center / cover;
+  background: transparent url("../img/bg.jpg") no-repeat center center / cover;
 
   &__inner {
     padding: 149px 0 54px;
@@ -102,7 +122,7 @@
 
   &__item {
     & + & {
-      margin-top: 12.2rem
+      margin-top: 12.2rem;
     }
   }
 }
@@ -120,8 +140,8 @@
       position: absolute;
       top: 0;
       left: 0;
-//       right: 0;
-//       bottom: 0;
+      //       right: 0;
+      //       bottom: 0;
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -134,7 +154,6 @@
     flex: 0 1 50%;
     padding-top: 3.2rem;
     padding-bottom: 3.2rem;
-
   }
 
   &:nth-child(even) {
@@ -145,7 +164,6 @@
     & .service-item__body {
       flex: 0 1 auto;
       margin-left: auto;
-
     }
   }
 
@@ -166,10 +184,93 @@
 
 // recommended-section -------------------------------------------------------------------
 .recommended-section {
-  background: transparent url('../img/bg02.jpg') no-repeat center center / cover;
+  background: transparent url("../img/bg02.jpg") no-repeat center center / cover;
 
   &__list {
     margin-top: 6.6rem;
     @include l-flex-wrap(3, 9.4rem, 9.4rem, 3, 1);
+  }
+}
+
+// news-section -------------------------------------------------------------------
+.news-section {
+  &__content {
+  }
+
+  &__main {
+    margin-top: 4.6rem;
+  }
+
+  &__index {
+  }
+
+  &__body {
+    @include l-flex-wrap(2, 4.6rem, 2rem, 2, 1);
+  }
+
+  &__item-link {
+    display: block;
+  }
+}
+// access-section -------------------------------------------------------------------
+.access-section {
+  background: transparent url("../img/bg.jpg") no-repeat center center / cover;
+
+  &__main {
+    margin-top: 8.4rem;
+  }
+
+  &__address {
+  }
+
+  &__map-area {
+    margin: 6.9rem auto 0;
+    width: 79.2rem;
+    max-width: 100%;
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    padding-top: 74.747474747%;
+
+    & > iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.address-box {
+  &__img {
+  }
+
+  &__body {
+    padding: 20px 0 30px;
+  }
+
+  &__main {
+  }
+
+  &__item {
+    & + & {
+      margin-top: 2.4rem;
+    }
+
+    & dt {
+      font-weight: $fw-extraBold;
+    }
+
+    & dd {
+      margin-top: 2.4rem;
+    }
+  }
+
+  &__sub {
+    margin-top: 2.4rem;
+    line-height: (32/16);
   }
 }

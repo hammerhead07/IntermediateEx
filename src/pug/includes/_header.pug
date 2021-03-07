@@ -9,8 +9,23 @@ header.l-header
 
       nav.p-header__nav
         ul
-          each item in ['お部屋', 'お料理', '温泉']
-            li: a(href="#") #{item}
+          - 
+            const items = [
+              {
+                text: 'お部屋',
+                link: 'room.html'
+              },
+              {
+                text: 'お料理',
+                link: 'menu.html'
+              },
+              {
+                text: '温泉',
+                link: 'onsen.html'
+              }
+            ];
+          each item in items
+            li: a(href=item.link) #{item.text}
       // /.l-header-nav
 
     .p-header__right
@@ -18,14 +33,17 @@ header.l-header
 
     .p-header-drawer
       .drawer
-        button.drawer-icon.js-drawer.for-drawer(type="button" "data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
+        button.drawer-icon.js-drawer.for-drawer(type="button" data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
           |
           span.drawer-bars
             - for(let i = 0; i < 3; i++)
               span.drawer-bar
           |
-        .drawer-bg.for-drawer.js-drawer("data-target"="for-drawer" "aria-controls"="drawer-content1" "aria-expanded"="false")
-        #drawer-content1.drawer-content.for-drawer("aria-hidden"="true") コンテンツ部分
+        .drawer-bg.for-drawer.js-drawer(data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
+        #drawer-content1.drawer-content.for-drawer(aria-hidden="true")
+          ul.drawer-nav
+            each item in items
+              li: a(href=item.link) #{item.text}
     // /.l-header-drawer
   // /.p-header
 // /.l-header

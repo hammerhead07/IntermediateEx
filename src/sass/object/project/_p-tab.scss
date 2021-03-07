@@ -1,0 +1,33 @@
+.p-tab {
+  &__index-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__index-item {
+    & + & {
+      margin-left: 5.3rem;
+    }
+
+    &.is-active {
+      & > a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__pages {
+    margin-top: 5rem;
+    // position: relative;
+    background-color: #fff;
+  }
+
+  &__page {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

@@ -167,3 +167,12 @@ $is-bar-text-show: false;
 
 .drawer-content--cover {
 }
+
+.drawer-nav {
+  text-align: center;
+  
+  & > li {
+    padding: 1em;
+    margin-top: 1em;
+  }
+}

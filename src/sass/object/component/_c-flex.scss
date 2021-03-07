@@ -1,0 +1,20 @@
+.c-flex {
+  display: flex;
+  align-items: center;
+
+  &__primary {
+    flex: 0 0 50%;
+  }
+
+  &__secondary {
+    flex: 0 1 50%;
+    margin-left: 8.2rem;
+  }
+
+  &--extend-left {
+    & .c-flex__secondary {
+      margin-right: calc(50% - 50vw);
+    }
+  }
+}
+
