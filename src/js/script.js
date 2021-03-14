@@ -76,7 +76,37 @@ jQuery(function () {
       });
   }
 
+  /* ヘッダ */
+  jQuery(window).on('load scroll', function () {
+    if (jQuery('body').hasClass('home')) {
+      const headerHeight = jQuery('.js-header').height();
+      let position = jQuery(this).scrollTop();
+      if (position > headerHeight * 1.1) {
+        jQuery('.js-header').addClass('fixed');
+        jQuery('.js-header').find('img').attr('src', './img/logo02.png')
+      } else {
+        jQuery('.js-header').removeClass('fixed');
+        jQuery('.js-header').find('img').attr('src', './img/logo01.png')
+      }
+    } else {
+      jQuery('.js-header').find('img').attr('src', './img/logo02.png')
+    }
+  });
+
+  /* 画像スライダー */
   slider();
+
+  /* モーダル */
+  jQuery('.js-modal').on('click', function (e) {
+    e.preventDefault();
+    const target = jQuery(this).data('target');
+    if (jQuery(`.${target}`).hasClass('open')) {
+      jQuery(`.${target}`).fadeOut(300).removeClass('open');
+    } else {
+      jQuery(`.${target}`).fadeIn(300).addClass('open');
+    }
+    return false;
+  });
 });
 
 /* トップページMV画像の切り替え b5y https://wemo.tech/1653 */
@@ -100,5 +130,4 @@ function slider() {
       jQuery(nowSlide).removeClass('zoom_');
     }, fadeTime);
   }, IntervalTime);
-
 }

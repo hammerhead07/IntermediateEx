@@ -1,0 +1,31 @@
+.p-modal.for-modal
+  .p-modal__bg.js-modal(data-target="for-modal")
+  .p-modal__content.reserve-form
+    button.reserve-form__btn.c-open-close-btn.is-checked(type='button' data-target='for-modal')
+      span.c-open-close-btn__bars
+        - for(let i = 0; i < 3; i++)
+          span.c-open-close-btn__bar
+    h2.reserve-form__title 宿泊予約
+    form(action="", method="post")#reserve-form.reserve-form__main
+      dl.reserve-form__content
+        .reserve-form__item
+          label(for='input-name').reserve-form__label お名前
+          input(type="text", name="name" placeholder='例：石井正悟')#input-name.reserve-form__input
+        .reserve-form__item
+          label(for='input-email').reserve-form__label メールアドレス
+          input(type="email", name="email", placeholder="例：Example@example.com")#input-email.reserve-form__input
+        .reserve-form__item
+          label(for="input-plan").reserve-form__label ご希望プラン（空いているプランのみ表示されます）
+          select(name="plan" required)#input-plan.reserve-form__input 
+            option(value="" disabled selected) プランを選択してください
+            option(value="plan1") ①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン
+            option(value="plan2") ②平日に優雅に楽しむ、特別宿泊プラン
+            option(value="plan3") ③絶景貸切露天と個室会席を満喫できるファミリープラン
+        .reserve-form__item
+          label(for="input-date").reserve-form__label 日時選択
+          input(type="date", name="date", placeholder="日時を選択してください")#input-date.reserve-form__input
+      .reserve-form__footer
+        button(type="submit" for="reserve-form" value="send" disabled).btn.reserve-form__submit-btn.js-submit 送信する
+
+
+
