@@ -4,8 +4,19 @@ body {
   display: flex;
   flex-direction: column;
 
+  &:not(.home) {
+    margin-top: $header-height;
+  }
+
   @include mq(tab) {
     margin-top: $header-height-sp;
     min-height: calc(100vh - #{$header-height-sp});
+  }
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
   }
 }

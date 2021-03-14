@@ -126,7 +126,7 @@ a {
   &:hover {
     opacity: $opacity;
   }
-  
+
   &:focus {
     text-decoration: underline;
   }
@@ -243,7 +243,7 @@ form {
 input,
 textarea {
   width: 100%;
-  padding: 8px;
+  padding: 0.5rem 1rem;
   border: 1px solid $cr-form-bd;
   border-radius: 0;
   background-image: none;
@@ -260,7 +260,7 @@ textarea {
 
   &:focus {
     outline: none;
-    border-color: $cr-form-bd_avtive;
+    border-color: $cr-form-bd_active;
     box-shadow: none;
   }
 
@@ -273,7 +273,7 @@ textarea {
 input {
   &:focus {
     outline: none;
-    border-color: $cr-form-bd_avtive;
+    border-color: $cr-form-bd_active;
     box-shadow: none;
   }
 
@@ -407,9 +407,9 @@ input {
 }
 
 select {
-  padding: 0.4em 2.4em 0.4em 0.8em;
+  padding: 0.5rem 1rem;
   border-radius: 0;
-  background-image: url(../img/arrow.svg);
+  // background-image: url(../img/arrow.svg);
   background-position: right 6px center;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -427,7 +427,7 @@ select {
 
   &:focus {
     outline: none;
-    box-shadow: none;
-    border-color: $cr-form-bd_avtive;
+    box-shadow: 5px 5px 8px #E7E7E7;
+    border-color: $cr-form-bd_active;
   }
 }

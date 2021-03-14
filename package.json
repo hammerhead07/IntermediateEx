@@ -54,5 +54,8 @@
     "ts-node": "^9.1.0",
     "typescript-register": "^1.1.0",
     "typescript-require": "^0.3.0"
+  },
+  "dependencies": {
+    "flatpickr": "^4.6.9"
   }
 }

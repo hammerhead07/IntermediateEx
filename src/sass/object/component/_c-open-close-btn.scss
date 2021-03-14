@@ -1,0 +1,59 @@
+$drawer-bar-background: #424242;
+// サイズ
+$drawer-bar-space: 5px;
+$drawer-bar-width: 25px;
+$drawer-bar-height: 3px;
+
+
+.c-open-close-btn {
+  cursor: pointer;
+}
+
+.c-open-close-btn__bars {
+  width: $drawer-bar-width;
+  height: $drawer-bar-height + ($drawer-bar-space + $drawer-bar-height) * 2;
+  position: relative;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.c-open-close-btn__bar {
+  position: absolute;
+  // content: '';
+  right: 0;
+  left: 0;
+  display: block;
+  background: $drawer-bar-background;
+  width: 100%;
+  height: $drawer-bar-height;
+  border-radius: 3px;
+  transition: all 0.3s linear 0s;
+
+  &:nth-of-type(1) {
+    top: 0;
+  }
+
+  &:nth-of-type(2) {
+    top: $drawer-bar-space + $drawer-bar-height;
+  }
+
+  &:nth-of-type(3) {
+    top: ($drawer-bar-space + $drawer-bar-height) * 2;
+  }
+
+  .is-checked & {
+    &:nth-of-type(1) {
+      top: 10px;
+      transform: rotate(-45deg);
+    }
+
+    &:nth-of-type(2) {
+      background: transparent;
+    }
+
+    &:nth-of-type(3) {
+      top: 10px;
+      transform: rotate(45deg);
+    }
+  }
+}

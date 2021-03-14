@@ -1,14 +1,9 @@
 // 色
-$drawer-bar-background: #424242;
 $drawer-bar-font-color: #424242;
 $drawer-content-background: #fff;
 $drawer-content-font-color: #424242;
 $drawer-background-color: rgba(0, 0, 0, 0.25);
 
-// サイズ
-$drawer-bar-space: 5px;
-$drawer-bar-width: 25px;
-$drawer-bar-height: 3px;
 $drawer-content-width: 200px;
 
 // 表示
@@ -37,11 +32,9 @@ $is-bar-text-show: false;
 }
 
 .drawer-icon {
-  display: inline-block;
   position: relative;
   z-index: map-get($layer, "drawer") + 1;
   text-align: center;
-  cursor: pointer;
 
   &::after {
     content: "MENU";
@@ -62,54 +55,6 @@ $is-bar-text-show: false;
   &.is-checked {
     &::after {
       content: "CLOSE";
-    }
-  }
-}
-
-.drawer-bars {
-  display: inline-block;
-  width: $drawer-bar-width;
-  height: $drawer-bar-height + ($drawer-bar-space + $drawer-bar-height) * 2;
-  position: relative;
-  vertical-align: bottom;
-}
-
-.drawer-bar {
-  position: absolute;
-  right: 0;
-  left: 0;
-  display: block;
-  background: $drawer-bar-background;
-  width: 100%;
-  height: $drawer-bar-height;
-  border-radius: 3px;
-  transition: all 0.3s linear 0s;
-
-  &:nth-of-type(1) {
-    top: 0;
-  }
-
-  &:nth-of-type(2) {
-    top: $drawer-bar-space + $drawer-bar-height;
-  }
-
-  &:nth-of-type(3) {
-    top: ($drawer-bar-space + $drawer-bar-height) * 2;
-  }
-
-  .is-checked & {
-    &:nth-of-type(1) {
-      top: 10px;
-      transform: rotate(-45deg);
-    }
-
-    &:nth-of-type(2) {
-      background: transparent;
-    }
-
-    &:nth-of-type(3) {
-      top: 10px;
-      transform: rotate(45deg);
     }
   }
 }
@@ -170,7 +115,7 @@ $is-bar-text-show: false;
 
 .drawer-nav {
   text-align: center;
-  
+
   & > li {
     padding: 1em;
     margin-top: 1em;

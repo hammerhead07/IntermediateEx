@@ -1,10 +1,10 @@
 block variables
 
-header.l-header
+header.l-header.js-header
   .p-header
     .p-header__left
       #{logo_tag}.p-header__logo: a(href="/")
-        img(src="./img/logo02.png", alt="ロゴ")
+        img(src="./img/logo01.png", alt="ロゴ")
         | 石井花壇
 
       nav.p-header__nav
@@ -29,16 +29,14 @@ header.l-header
       // /.l-header-nav
 
     .p-header__right
-      button.c-btn.p-header__cv-btn 宿泊予約
+      button(data-target='for-modal').c-btn.p-header__cv-btn.js-modal 宿泊予約
 
     .p-header-drawer
       .drawer
-        button.drawer-icon.js-drawer.for-drawer(type="button" data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
-          |
-          span.drawer-bars
+        button.drawer-icon.c-open-close-btn.js-drawer.for-drawer(type="button" data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
+          span.c-open-close-btn__bars
             - for(let i = 0; i < 3; i++)
-              span.drawer-bar
-          |
+              span.c-open-close-btn__bar
         .drawer-bg.for-drawer.js-drawer(data-target="for-drawer" aria-controls="drawer-content1" aria-expanded="false")
         #drawer-content1.drawer-content.for-drawer(aria-hidden="true")
           ul.drawer-nav
@@ -47,5 +45,7 @@ header.l-header
     // /.l-header-drawer
   // /.p-header
 // /.l-header
+
+include /pug/includes/_p-modal
 |
 |

@@ -126,7 +126,7 @@ block content
               },
             ];
           each recommend in recommends
-            .c-card.recommended-section__item
+            article.c-card.recommended-section__item
               a(href="").c-card__link
                 figure.c-card__img: img(src=`./img/${recommend.img}`, alt=recommend.alt)
                 .c-card__body
@@ -139,8 +139,8 @@ block content
         .news-section__main
           .news-section__index.p-tab
             ul.p-tab__index-list
-              li.p-tab__index-item.is-active: a(href='').p-tab__link 営業情報
-              li.p-tab__index-item: a(href='').p-tab__link その他
+              li.p-tab__index-item.is-active: a(href='#').p-tab__link 営業情報
+              li.p-tab__index-item: a(href='#').p-tab__link その他
           .p-tab__pages
             .p-tab__page.is-active
               .p-tab__page-content.news-section__body
@@ -184,8 +184,8 @@ block content
                     },
                   ];
                 each news_item in news_list
-                  a(href="").news-section__item-link
-                    .c-media
+                  article.c-media.news-section__media
+                    a(href="#").c-media__link.c-media__content
                       figure.c-media__img: img(src=`./img/${news_item.img}`, alt=news_item.alt)
                       .c-media__body
                         time(datetime=news_item.date).c-media__date= news_item.date
@@ -215,8 +215,8 @@ block content
                     },
                   ];
                 each other in others
-                  a(href="").news-section__item-link
-                    .c-media
+                  article.c-media.news-section__media
+                    a(href="#").c-media__link.c-media__content
                       figure.c-media__img: img(src=`./img/${other.img}`, alt=other.alt)
                       .c-media__body
                         time(datetime=other.date).c-media__date= other.date
