@@ -100,10 +100,10 @@ jQuery(function () {
   jQuery('.js-modal').on('click', function (e) {
     e.preventDefault();
     const target = jQuery(this).data('target');
-    if (jQuery(`.${target}`).hasClass('open')) {
-      jQuery(`.${target}`).fadeOut(300).removeClass('open');
+    if (jQuery(`.${target}`).hasClass('is-opened')) {
+      jQuery(`.${target}`).fadeOut(300).removeClass('is-opened');
     } else {
-      jQuery(`.${target}`).fadeIn(300).addClass('open');
+      jQuery(`.${target}`).fadeIn(300).addClass('is-opened');
     }
     return false;
   });
