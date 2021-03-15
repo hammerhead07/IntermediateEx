@@ -205,23 +205,25 @@ form {
   padding: 0;
 
   button {
-    appearance: none;
-    width: auto;
-    display: inline-block;
-    padding: 0.6em 2em;
-    margin: 0;
-    background-image: none;
-    background-color: $main-color;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 0;
-    font-size: 1.6rem;
-    transition: all 0.3s ease 0s;
+    // appearance: none;
+    // width: auto;
+    // display: inline-block;
+    // padding: 0.6em 2em;
+    // margin: 0;
+    // background-image: none;
+    // background-color: $main-color;
+    // color: #fff;
+    // text-decoration: none;
+    // border: none;
+    // border-radius: 0;
+    // font-size: 1.6rem;
+    // transition: all 0.3s ease 0s;
 
     &:disabled {
       background-color: $color-disable;
-      cursor: pointer;
+      color: #fff;
+      // cursor: pointer;
+      border: none;
     }
 
     &:not(:disabled):hover,

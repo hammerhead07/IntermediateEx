@@ -76,6 +76,63 @@ jQuery(function () {
       });
   }
 
+  // form の入力チェックを要整理
+
+  /* formの入力確認 */
+  let $submit = jQuery('.js-submit');
+  jQuery('.js-form input, .js-form select').on('keyup', function () {
+    if (
+      jQuery('.js-form input[name="name"]').val() !== "" &&
+      jQuery('.js-form input[type="email"]').val() !== "" &&
+      jQuery('.js-form select > option:selected').val() !== "" &&
+      jQuery('.js-form input[type="date"]').val() !== ""
+    ) {
+      // すべて入力されたとき
+      $submit.prop('disabled', false);
+    } else {
+      // 入力されていないとき
+      $submit.prop('disabled', true);
+    }
+  });
+
+  // form validation
+  (function () {
+    var requireFlg = false;
+    var $require = jQuery('.js-form .is-required');
+    var fillCount = 0;
+
+    function setSubmitProp() {
+      if (requireFlg) {
+        jQuery('.js-submit').prop('disabled', false);
+      } else {
+        jQuery('.js-submit').prop('disabled', true);
+      }
+    }
+
+    // 必須項目
+    $require.on('blur', function () {
+      $require.each(function () {
+        var value = (jQuery(this).get(0).tagName !== 'select' ? jQuery(this).val() : jQuery(this + ' > option:selected').val());
+        if ((value !== '' && value.match(/[^\s\t]/))) {
+          fillCount++;
+        }
+      });
+
+      requireFlg = (fillCount === $require.length ? true : false);
+
+      setSubmitProp();
+      fillCount = 0;
+    });
+
+    // 送信時
+    jQuery('.js-form').on('submit', function () {
+      if (!(requireFlg)) {
+        alert('入力に誤りがあります。');
+        return false;
+      }
+    });
+  })();
+
   /* ヘッダ */
   jQuery(window).on('load scroll', function () {
     if (jQuery('body').hasClass('home')) {
