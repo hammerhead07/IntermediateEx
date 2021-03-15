@@ -14,9 +14,15 @@ append variables
   - var logo_tag = 'h1';
   - var pageName = "home";
 
+prepend css
+  link(rel="stylesheet", href="./css/app/flatpickr.min.css")
+  link(rel="stylesheet", href="./css/app/themes/material_green.css")
+
 append css
 
 append headscript
+  script(src="./js/app/flatpickr.min.js")
+  script(src="./js/app/l10n/ja.js")
 
 append js
   //- script(src="./js/.js")

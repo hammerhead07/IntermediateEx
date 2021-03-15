@@ -107,6 +107,13 @@ jQuery(function () {
     }
     return false;
   });
+
+  /* flatpickr */
+  const calender = flatpickr('.js-flatpickr', {
+    minDate: 'today', // 予約当日以降を選択可能
+    mode: 'range',    // 日付の期間選択
+    'locale': 'ja',
+  });
 });
 
 /* トップページMV画像の切り替え b5y https://wemo.tech/1653 */

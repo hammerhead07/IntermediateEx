@@ -47,9 +47,6 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 /* browser-sync */
 const browserSync = require("browser-sync").create();
 
-// flatpickr
-const flatpickr = requre("flatpickr");
-
 // 開発と本番で処理を分ける
 // 今回はhtmlのところで使用
 const mode = require("gulp-mode")({

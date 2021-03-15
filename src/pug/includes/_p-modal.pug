@@ -23,7 +23,8 @@
             option(value="plan3") ③絶景貸切露天と個室会席を満喫できるファミリープラン
         .reserve-form__item
           label(for="input-date").reserve-form__label 日時選択
-          input(type="date", name="date", placeholder="日時を選択してください")#input-date.reserve-form__input
+          input(type="date", name="date", placeholder="日時を選択してください")#input-date.reserve-form__input.js-flatpickr
+
       .reserve-form__footer
         button(type="submit" for="reserve-form" value="send" disabled).btn.reserve-form__submit-btn.js-submit 送信する
 
