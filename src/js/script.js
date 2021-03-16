@@ -186,10 +186,13 @@ jQuery(function () {
     jQuery(`.${target}`).each(function() {
       jQuery(this).removeClass('is-active');
     });
-
     jQuery(`.${target}`).eq(index).addClass('is-active');
+
+    return false;
   });
-  return false;
+
+  /* AOS */
+  AOS.init();
 });
 
 /* トップページMV画像の切り替え b5y https://wemo.tech/1653 */

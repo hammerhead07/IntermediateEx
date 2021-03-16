@@ -15,28 +15,24 @@ append variables
   - var pageName = "home";
 
 prepend css
-  link(rel="stylesheet", href="./css/app/flatpickr.min.css")
-  link(rel="stylesheet", href="./css/app/themes/material_green.css")
 
 append css
 
 append headscript
 
 prepend js
-  script(src="./js/app/flatpickr.min.js")
-  script(src="./js/app/l10n/ja.js")
 
 append js
   //- script(src="./js/.js")
 
 block content  
-  .fv
+  .fv(data-aos="fade")
     .fv-slider.js-fv-slider
       .fv-slider__img: img(src="./img/mainbg01.jpg")
       .fv-slider__img: img(src="./img/mainbg02.jpg")
       .fv-slider__img: img(src="./img/mainbg03.jpg")
     .l-container.fv__container
-      .fv__text-box
+      .fv__text-box(data-aos="fade-up" data-aos-duration="1000")
         p.fv__text 頑張る人の<br>
           | 頑張らない時間
     // /.l-container
@@ -47,26 +43,26 @@ block content
     section.concept-section.section
       .l-container
         .concept-section__inner.concept-section__content
-          h2.concept-section__title: span 温海温泉の
+          h2.concept-section__title(data-aos="fade-up" data-aos-duration="1000"): span 温海温泉の
             br
             | 美しさに癒やされて
 
-          p.concept-section__text
+          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200")
             | 東北の奥座敷である温海温泉郷<br>
             | 開湯は約1300年前とされ、役小角が<br>
             | 発見したと伝えられます<br>
 
-          p.concept-section__text
+          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400")
             | 石井花壇は江戸より続く由緒ある旅館で<br>
             | クラシックな作りの中に大正ロマンあるれる<br>
             | 内装を残しております<br>
 
-          p.concept-section__text
+          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600")
             | 圧倒的癒やしの空間で<br>
             | 頑張る現代人に<br>
             |頑張らない圧倒的な非日常をご提供します<br>
 
-          p.concept-section__text.concept-section__footer 石井花壇
+          p.concept-section__text.concept-section__footer(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800") 石井花壇
 
     section.service.p-section
       //- .l-container
@@ -100,9 +96,9 @@ block content
           ];
         each service in services
           .p-alternate__item.service__item.service-item
-            figure.p-alternate__item-primary.service-item__img
+            figure.p-alternate__item-primary.service-item__img(data-aos="fade-up" data-aos-duration="1000")
               img(src=`./img/${service.img}`, alt=service.alt)
-            .p-alternate__item-secondary.service-item__body
+            .p-alternate__item-secondary.service-item__body(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200")
               h2.service-item__title !{service.title}
               p.service-item__text !{service.text}
               .service-item__body-footer
@@ -110,8 +106,8 @@ block content
 
     section.recommended-section.p-section
       .l-container.p-section__content.p-section__content_padding-bottom_large
-        h2.p-section__title おすすめご宿泊プラン
-        .recommended-section__list
+        h2.p-section__title(data-aos="fade-up" data-aos-duration="1000") おすすめご宿泊プラン
+        .recommended-section__list(data-aos="fade-up" data-aos-duration="1000")
           - 
             const recommends = [
               {
@@ -143,14 +139,14 @@ block content
 
     section.news-section.p-section
       .l-container.p-section__content
-        h2.p-section__title お知らせ
+        h2.p-section__title(data-aos="fade-up" data-aos-duration="1000") お知らせ
         .news-section__main
           .news-section__index.p-tab
-            ul.p-tab__index-list
+            ul.p-tab__index-list(data-aos="fade-up" data-aos-duration="1000")
               li.p-tab__index-item.js-tabNav.is-active(data-target="js-forTab"): a(href='').p-tab__link 営業情報
               li.p-tab__index-item.js-tabNav(data-target="js-forTab"): a(href='').p-tab__link その他
           .p-tab__pages
-            .p-tab__page.js-forTab.is-active
+            .p-tab__page.js-forTab.is-active(data-aos="fade-up" data-aos-duration="1000")
               .p-tab__page-content.news-section__body
                 -
                   const news_list = [
@@ -199,7 +195,7 @@ block content
                         time(datetime=news_item.date).c-media__date= news_item.date
                         .c-media__title= news_item.title
 
-            .p-tab__page.js-forTab
+            .p-tab__page.js-forTab(data-aos="fade-up" data-aos-duration="1000")
               .p-tab__page-content.news-section__body
                 -
                   const others = [
@@ -232,9 +228,9 @@ block content
 
     section.access-section.p-section
       .l-container.p-section__content.p-section__content_padding-bottom_semi-large
-          h2.p-section__title アクセス
+          h2.p-section__title(data-aos="fade-up" data-aos-duration="1000") アクセス
           .access-section__main
-            .access-section__address.address-box.c-flex.c-flex--extend-left
+            .access-section__address.address-box.c-flex.c-flex--extend-right(data-aos="fade-up" data-aos-duration="1000")
               figure.address-box__img.c-flex__primary: img(src="./img/access.jpg", alt="外観のイメージ")
               .address-box__body.c-flex__secondary
                 dl.address-box__main
@@ -249,7 +245,7 @@ block content
                     dt 営業時間
                     dd 14:00-23:00
                 p.address-box__sub ＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、ご連絡ください。
-            .access-section__map-area
+            .access-section__map-area(data-aos="fade-up" data-aos-duration="1000")
               .access-section__map
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24933.85841738821!2d139.581050877829!3d38.63203904518286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1614469302690!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
