@@ -6,7 +6,7 @@
   left: 0;
   height: $header-height;
   z-index: map-get($layer, "header");
-  padding: 0 30px;
+  padding: 0 3rem;
   transition: top 0.5s ease;
   color: $white;
 
@@ -23,7 +23,7 @@
     color: $text-color;
   }
 
-  @include mq(tab) {
+  @include mq(sp) {
     height: $header-height-sp;
   }
 }

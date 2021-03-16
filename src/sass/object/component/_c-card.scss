@@ -1,5 +1,7 @@
 .c-card {
   &__link {
+    display: block;
+
     &:hover,
     &:focus {
       opacity: 1;

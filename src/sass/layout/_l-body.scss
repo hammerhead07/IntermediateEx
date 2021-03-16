@@ -6,11 +6,11 @@ body {
 
   &:not(.home) {
     margin-top: $header-height;
-  }
 
-  @include mq(tab) {
-    margin-top: $header-height-sp;
-    min-height: calc(100vh - #{$header-height-sp});
+    @include mq(tab) {
+      margin-top: $header-height-sp;
+      min-height: calc(100vh - #{$header-height-sp});
+    }
   }
 
   &.fixed {

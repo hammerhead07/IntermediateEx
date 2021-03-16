@@ -47,9 +47,8 @@ block content
       .fv-slider__img: img(src="./img/mainbg02.jpg")
       .fv-slider__img: img(src="./img/mainbg03.jpg")
     .l-container.fv__container
-      .fv__text-box(data-aos="fade-up" data-aos-duration="1000")
-        p.fv__text 頑張る人の<br>
-          | 頑張らない時間
+      p.fv__text-box(data-aos="fade-up" data-aos-duration="1000") 頑張る人の<br>
+        | 頑張らない時間
     // /.l-container
   |
   |
@@ -57,27 +56,36 @@ block content
   main.l-main
     section.concept-section.section
       .l-container
-        .concept-section__inner.concept-section__content
-          h2.concept-section__title(data-aos="fade-up" data-aos-duration="1000"): span 温海温泉の
-            br
-            | 美しさに癒やされて
+        .concept-section__inner
+          .concept-section__content
+            h2.concept-section__title(data-aos="fade-up" data-aos-duration="1000"): span 温海温泉の
+              br
+              | 美しさに癒やされて
 
-          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200")
-            | 東北の奥座敷である温海温泉郷<br>
-            | 開湯は約1300年前とされ、役小角が<br>
-            | 発見したと伝えられます<br>
+            p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200")
+              | 東北の奥座敷である温海温泉郷<br>
+              | 開湯は約1300年前とされ、
+              br.u-hidden-pc.u-hidden-tab
+              | 役小角が
+              br.u-hidden-sp
+              | 発見したと伝えられます<br>
 
-          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400")
-            | 石井花壇は江戸より続く由緒ある旅館で<br>
-            | クラシックな作りの中に大正ロマンあるれる<br>
-            | 内装を残しております<br>
+            p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400")
+              | 石井花壇は
+              br.u-hidden-pc.u-hidden-tab
+              | 江戸より続く由緒ある旅館で<br>
+              | クラシックな作りの中に
+              br.u-hidden-pc.u-hidden-tab
+              | 大正ロマンあるれる
+              br.u-hidden-sp
+              | 内装を残しております<br>
 
-          p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600")
-            | 圧倒的癒やしの空間で<br>
-            | 頑張る現代人に<br>
-            |頑張らない圧倒的な非日常をご提供します<br>
+            p.concept-section__text(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600")
+              | 圧倒的癒やしの空間で<br>
+              | 頑張る現代人に<br>
+              | 頑張らない圧倒的な非日常をご提供します<br>
 
-          p.concept-section__text.concept-section__footer(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800") 石井花壇
+            p.concept-section__text.concept-section__footer(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800") 石井花壇
 
     section.service.p-section
       //- .l-container
@@ -88,7 +96,7 @@ block content
               img: 'oheya-top.jpg',
               alt: 'お部屋のイメージ',
               title: '喧騒から離れた空間<br>心落ち着く至極のひととき',
-              text: 'まるで時が止まったかのような、圧倒的な静寂のなかで、<br>ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。',
+              text: 'まるで時が止まったかのような、<br class="u-hidden-pc u-hidden-tab">圧倒的な静寂のなかで、<br class="u-hidden-sp">ひたすらにゆったりと…。<br>最高級の「何もしない時間」をお過ごしください。',
               footer: 'お部屋について',
               link: 'room.html'
             },
@@ -104,7 +112,7 @@ block content
               img: 'onsen-top.jpg',
               alt: '温泉のイメージ',
               title: '疲れ切った身体にやすらぎを<br>温海の源泉に癒やされて',
-              text: '古くは弘法大師の病をも治療したと言われる熱海の泉質。<br>現代人の疲弊しきった身体を修復する最高級の湯治場として<br>ご活用ください。',
+              text: '古くは弘法大師の病をも治療したと言われる<br class="u-hidden-pc u-hidden-tab">熱海の泉質。<br>現代人の疲弊しきった身体を修復する<br class="u-hidden-pc u-hidden-tab">最高級の湯治場として<br class="u-hidden-sp">ご活用ください。',
               footer: '温泉について',
               link: 'onsen.html'
             }
@@ -243,26 +251,26 @@ block content
 
     section.access-section.p-section
       .l-container.p-section__content.p-section__content_padding-bottom_semi-large
-          h2.p-section__title(data-aos="fade-up" data-aos-duration="1000") アクセス
-          .access-section__main
-            .access-section__address.address-box.c-flex.c-flex--extend-right(data-aos="fade-up" data-aos-duration="1000")
-              figure.address-box__img.c-flex__primary: img(src="./img/access.jpg", alt="外観のイメージ")
-              .address-box__body.c-flex__secondary
-                dl.address-box__main
-                  address.address-box__item
-                    dt 住所
-                    dd 〒000-0000 
-                    dd 山形県鶴岡市xxxxxxxxxx
-                  .address-box__item
-                    dt TEL/FAX
-                    dd 000-0000-0000/00-0000-0000
-                  .address-box__item
-                    dt 営業時間
-                    dd 14:00-23:00
-                p.address-box__sub ＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、ご連絡ください。
-            .access-section__map-area(data-aos="fade-up" data-aos-duration="1000")
-              .access-section__map
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24933.85841738821!2d139.581050877829!3d38.63203904518286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1614469302690!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        h2.p-section__title(data-aos="fade-up" data-aos-duration="1000") アクセス
+        .access-section__main
+          .access-section__address.address-box.c-flex.c-flex--extend-right(data-aos="fade-up" data-aos-duration="1000")
+            figure.address-box__img.c-flex__primary: img(src="./img/access.jpg", alt="外観のイメージ")
+            .address-box__body.c-flex__secondary
+              dl.address-box__main
+                address.address-box__item
+                  dt 住所
+                  dd 〒000-0000 
+                  dd 山形県鶴岡市xxxxxxxxxx
+                .address-box__item
+                  dt TEL/FAX
+                  dd 000-0000-0000/00-0000-0000
+                .address-box__item
+                  dt 営業時間
+                  dd 14:00-23:00
+              p.address-box__sub ＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、ご連絡ください。
+          .access-section__map-area(data-aos="fade-up" data-aos-duration="1000")
+            .access-section__map
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24933.85841738821!2d139.581050877829!3d38.63203904518286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1614469302690!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
   // /.content
   |

@@ -9,6 +9,10 @@
 
 html {
   font-size: 62.5%;
+
+  @include mq(sp) {
+    font-size: 50%;
+  }
 }
 
 html,
@@ -412,9 +416,9 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 0;
   // background-image: url(../img/arrow.svg);
-  background-position: right 6px center;
-  background-repeat: no-repeat;
-  background-size: 24px;
+  // background-position: right 6px center;
+  // background-repeat: no-repeat;
+  // background-size: 24px;
   font-family: inherit;
   font-size: 1.6rem;
   color: inherit;

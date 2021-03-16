@@ -4,22 +4,22 @@ $btn-border-color: #707070;
 $btn-font-color: $text-color;
 
 // サイズ
-$btn-width: 200px;
-$btn-height: 60px;
+// $btn-width: 200px;
+// $btn-height: 60px;
 $btn-border-width: 1px;
 $btn-border-radius: 0;
-$btn-font-size: 16px;
+$btn-font-size: 1.6rem;
 $btn-font-wight: $fw-medium;
 $btn-letter-spacing: 0;
 
 .c-btn {
   appearance: none;
-  padding: 19px 2em;
+  padding: 1.9rem 2em;
   display: inline-block;
   vertical-align: middle;
-  min-width: $btn-width;
+  // min-width: $btn-width;
   max-width: 100%;
-  border: 1px solid $btn-border-color;
+  border: $btn-border-width solid $btn-border-color;
   color: $btn-font-color;
   letter-spacing: $btn-letter-spacing;
   font-weight: $btn-font-wight;

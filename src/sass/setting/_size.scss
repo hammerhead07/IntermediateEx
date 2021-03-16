@@ -5,7 +5,8 @@ $layout-sp-vw: 767px;
 
 // ブレークポイント
 $breakpoints: (
-	"sp": "(max-width: #{$layout-sp-vw})",
+  "sp": "(max-width: #{$layout-sp-vw})",
+  "sp-up": "(min-width: #{$layout-sp-vw + 1px})",
 	"tab-only": "(min-width: #{$layout-sp-vw + 1px}) and (max-width: #{$layout-width-container - 1px})",
 	"tab": "(max-width: #{$layout-width-container - 1px})",
 	"pc": "(min-width: #{$layout-width-container})",
