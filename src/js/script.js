@@ -171,6 +171,25 @@ jQuery(function () {
     mode: 'range',    // 日付の期間選択
     'locale': 'ja',
   });
+
+  /* tab */
+  jQuery('.js-tabNav > a').on('click', function(e) {
+    e.preventDefault();
+    const index = jQuery('.js-tabNav').index(jQuery(this).parent());
+    const target = jQuery(this).parent().data('target');
+
+    jQuery('.js-tabNav').each(function() {
+      jQuery(this).removeClass('is-active');
+    });
+    jQuery(this).parent().addClass('is-active');
+
+    jQuery(`.${target}`).each(function() {
+      jQuery(this).removeClass('is-active');
+    });
+
+    jQuery(`.${target}`).eq(index).addClass('is-active');
+  });
+  return false;
 });
 
 /* トップページMV画像の切り替え b5y https://wemo.tech/1653 */

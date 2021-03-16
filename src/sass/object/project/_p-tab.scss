@@ -6,14 +6,18 @@
   }
 
   &__index-item {
+    transition: all 0.3s ease 0s;
+
     & + & {
       margin-left: 5.3rem;
     }
+  }
 
-    &.is-active {
-      & > a {
-        text-decoration: underline;
-      }
+  &__link {
+    transition: all 0.3s ease 0s;
+
+    .is-active > & {
+      text-decoration: underline;
     }
   }
 

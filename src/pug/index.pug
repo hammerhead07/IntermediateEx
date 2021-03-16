@@ -147,10 +147,10 @@ block content
         .news-section__main
           .news-section__index.p-tab
             ul.p-tab__index-list
-              li.p-tab__index-item.is-active: a(href='#').p-tab__link 営業情報
-              li.p-tab__index-item: a(href='#').p-tab__link その他
+              li.p-tab__index-item.js-tabNav.is-active(data-target="js-forTab"): a(href='').p-tab__link 営業情報
+              li.p-tab__index-item.js-tabNav(data-target="js-forTab"): a(href='').p-tab__link その他
           .p-tab__pages
-            .p-tab__page.is-active
+            .p-tab__page.js-forTab.is-active
               .p-tab__page-content.news-section__body
                 -
                   const news_list = [
@@ -199,7 +199,7 @@ block content
                         time(datetime=news_item.date).c-media__date= news_item.date
                         .c-media__title= news_item.title
 
-            .p-tab__page
+            .p-tab__page.js-forTab
               .p-tab__page-content.news-section__body
                 -
                   const others = [
