@@ -19,4 +19,8 @@ body {
     height: 100%;
     left: 0;
   }
+
+  &.hidden {
+    overflow: hidden;
+  }
 }

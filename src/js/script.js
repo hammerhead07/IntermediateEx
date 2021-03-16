@@ -29,6 +29,7 @@ jQuery(function () {
     let targetClass = jQuery(this).attr("data-target");
     let ariaControls = jQuery(this).attr("aria-controls");
     jQuery("." + targetClass).toggleClass("is-checked");
+    jQuery('body').toggleClass('hidden');
 
     if (jQuery("#" + ariaControls).attr("aria-hidden") === "true") {
       jQuery("#" + ariaControls).attr("aria-hidden", "false");
@@ -159,8 +160,10 @@ jQuery(function () {
     const target = jQuery(this).data('target');
     if (jQuery(`.${target}`).hasClass('is-opened')) {
       jQuery(`.${target}`).fadeOut(300).removeClass('is-opened');
+      jQuery('body').removeClass('hidden');
     } else {
       jQuery(`.${target}`).fadeIn(300).addClass('is-opened');
+      jQuery('body').addClass('hidden');
     }
     return false;
   });
