@@ -94,7 +94,7 @@ const PATHS = {
     app: "src/js/app/**/*.js"
   },
   image: {
-    src: "./src/img/**/*.{jpg,jpeg,png,gif,svg}",
+    src: "./src/img/**/*.{jpg,jpeg,png,gif,svg,ico}",
     dest: "./dist/img",
     destwp: "../public/wp-content/themes/" + themes + "/img",
   },
