@@ -16,6 +16,8 @@
       flex: 0 1 auto;
 
       @include mq(sp) {
+        max-width: 525px;
+        margin: 0 auto;
       }
     }
 

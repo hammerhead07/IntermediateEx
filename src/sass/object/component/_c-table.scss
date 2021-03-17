@@ -1,6 +1,6 @@
 .c-table {
   border: none;
-  width: 88rem;
+  max-width: 88rem;
   margin: 0 auto;
 
   th, td {
@@ -11,6 +11,6 @@
   }
 
   th {
-    width: 22rem;
+    width: 25%;
   }
 }

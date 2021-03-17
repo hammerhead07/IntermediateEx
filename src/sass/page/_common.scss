@@ -59,13 +59,31 @@
   display: flex;
   align-items: flex-start;
 
+  @include mq(tab) {
+    max-width: 80rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+
   &__img {
     flex: 0 0 52.5rem;
-    width: 52.5rem;
-    height: 30rem;
+    max-width: 52.5rem;
+    padding-top: 30rem;
+    height: 0;
     z-index: 1;
+    position: relative;
+
+    @include mq(sp) {
+      width: 90%;
+      max-width: initial;
+      padding-top: (90% * 30/52.5);
+    }
 
     & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -74,10 +92,24 @@
 
   &__body {
     margin-top: 5.7rem;
-    width: 81.3rem;
-    height: 38.1rem;
-    background: transparent url("../img/bg.jpg") no-repeat center center / cover;
     padding-top: 6rem;
+    padding-bottom: 6rem;
+    max-width: 81.3rem;
+    background: transparent url("../img/bg.jpg") no-repeat center center / cover;
+
+    @include mq(tab) {
+      margin-top: -3rem;
+      padding: 6rem;
+      margin-left: 30%;
+    }
+
+    @include mq(sp) {
+      margin-top: -3rem;
+      padding: 6rem;
+      margin-left: 10%;
+      margin-right: 0;
+      max-width: initial;
+    }
   }
 
   &__title {
@@ -104,17 +136,21 @@
 
   &:nth-child(odd) {
     .about-item__body {
-      margin-left: -15.8rem;
-      padding-left: 23.8rem;
-      padding-right: 6rem;
+      @include mq(pc) {
+        margin-left: -15.8rem;
+        padding-left: 23.8rem;
+        padding-right: 6rem;
+      }
     }
   }
 
   &:nth-child(even) {
     .about-item__body {
-      margin-right: -15.8rem;
-      padding-right: 23.8rem;
-      padding-left: 6rem;
+      @include mq(pc) {
+        margin-right: -15.8rem;
+        padding-right: 23.8rem;
+        padding-left: 6rem;
+      }
     }
   }
 }
