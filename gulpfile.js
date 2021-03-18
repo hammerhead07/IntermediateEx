@@ -7,6 +7,7 @@ const prettify = require("gulp-prettify");
 const fs = require('fs');
 const path = require('path');
 const data = require('gulp-data');
+const del = require("del");
 
 /* sass */
 const sass = require("gulp-sass");
@@ -277,7 +278,7 @@ function imageminFunc() {
 
 /// マップファイル除去 ////////////////////////////////////////////
 const cleanMap = () => {
-  return del([srcPath.styles.map, srcPath.scripts.map]);
+  return del([PATHS.styles.map, PATHS.js.map]);
 };
 
 // server===========================================
