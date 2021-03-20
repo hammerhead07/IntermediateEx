@@ -7,12 +7,21 @@
 // }
 // lower-fv -------------------------------------------------------------------
 .lower-fv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  height: 0;
+  padding-top: (600/1920*100%);
+
+  @include mq(sp) {
+    padding-top: 56.25%;
+  }
 }
 
 .lower-fv-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   font-size: 3.4rem;
   color: $white;
   font-weight: $fw-extraBold;
