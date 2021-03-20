@@ -2,3 +2,15 @@ mixin lower_fv(obj)
   .lower-fv(style=`background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(${obj.img}) no-repeat center center / cover;`)
     h1.lower-fv-title !{pageTitle}
     // /.l-container
+
+mixin lower_aboutContent(content)
+  .about-main__item.about-item.p-alternate__item(data-aos="fade-up" data-aos-duration="1000")
+    figure.about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
+    .about-item__body.p-alternate__item-secondary
+      h2.about-item__title=content.title
+      .about-item__text !{content.text}
+      if(content.notes.length)
+        ul.about-item__note
+          each note in content.notes
+            li.about-item__note-item= note
+

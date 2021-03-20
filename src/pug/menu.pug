@@ -96,15 +96,7 @@ block content
               },
             ];
           each content in contents
-            .about-main__item.about-item.p-alternate__item(data-aos="fade-up" data-aos-duration="1000")
-              figure.about-item__img.p-alternate__item-primary: img(src=`./img/${content.img}`, alt=content.alt)
-              .about-item__body.p-alternate__item-secondary
-                h2.about-item__title=content.title
-                .about-item__text !{content.text}
-                if(content.notes.length)
-                  ul.about-item__note
-                    each note in content.notes
-                      li.about-item__note-item= note
+            +lower_aboutContent(content)
   |
   |
 
