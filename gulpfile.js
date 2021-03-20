@@ -281,6 +281,13 @@ const cleanMap = () => {
   return del([PATHS.styles.map, PATHS.js.map]);
 };
 
+/**
+ * dist をクリーンアップ
+ */
+const distClean = () => {
+  return del([PATHS.pug.dest]);
+}
+
 // server===========================================
 const browserSyncOption = {
   // open: false,
@@ -356,3 +363,4 @@ exports.ts = ts;
 exports.js = js;
 exports.imagemin = imageminFunc;
 exports.cleanmap = cleanMap;
+exports.distclean = distClean;
