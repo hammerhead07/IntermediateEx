@@ -181,10 +181,11 @@
   }
 
   &__table {
-    margin-top: 5.15rem;
+    max-width: 88rem;
+    margin: 5.15rem auto 0;
     font-size: 1.5rem;
     line-height: (22/15);
-  }
+    }
 }
 // reserve-form -------------------------------------------------------------------
 $reserve-form-border-color: #E7E7E7;
