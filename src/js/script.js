@@ -176,17 +176,17 @@ jQuery(function () {
   });
 
   /* tab */
-  jQuery('.js-tabNav > a').on('click', function(e) {
+  jQuery('.js-tabNav > a').on('click', function (e) {
     e.preventDefault();
     const index = jQuery('.js-tabNav').index(jQuery(this).parent());
     const target = jQuery(this).parent().data('target');
 
-    jQuery('.js-tabNav').each(function() {
+    jQuery('.js-tabNav').each(function () {
       jQuery(this).removeClass('is-active');
     });
     jQuery(this).parent().addClass('is-active');
 
-    jQuery(`.${target}`).each(function() {
+    jQuery(`.${target}`).each(function () {
       jQuery(this).removeClass('is-active');
     });
     jQuery(`.${target}`).eq(index).addClass('is-active');
