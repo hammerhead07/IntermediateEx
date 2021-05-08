@@ -195,7 +195,9 @@ jQuery(function () {
   });
 
   /* AOS */
-  AOS.init();
+  AOS.init({
+    once: true,
+  });
 });
 
 /* トップページMV画像の切り替え b5y https://wemo.tech/1653 */
